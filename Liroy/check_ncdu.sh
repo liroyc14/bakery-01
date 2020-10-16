@@ -1,6 +1,4 @@
-#!/bin/bash
-
-#This script checks whether ncdu is istalled. If not, it asks the user if they want to install it.
+#!/usr/bin/env bash
 
 which ncdu &> /dev/null
 if [[ $? -eq 0 ]]; then
@@ -10,7 +8,8 @@ fi
 
 read -p "ncdu is not installed on your machine. Would you like to install it? [y/n]" user_answer
 if [[ $user_answer == "y" ]]; then
-  sudo yum install -y ncdu && echo "ncdu installed successfully. Goodbye!"
+  echo "Installing ncdu..."
+  yum install -y ncdu && echo "ncdu installed successfully. Goodbye!"
 elif [[ $user_answer == "n" ]]; then
   echo "Goodbye"
 else

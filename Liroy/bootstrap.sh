@@ -1,17 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#Step 1 - Update CentOS 7 system
+sudo -u vagrant
 echo "Updating system"
-sudo yum -y install epel-release
-sudo yum -y update
-sudo yum install -y yum-utils
-sudo yum-config-manager \
+yum -y update
+yum -y install epel-release yum-utils
+yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 
-#Install Docker
 echo "Installing Docker"
-sudo yum -y install docker docker-ce docker-ce-cli containerd.io
+yum -y install docker docker-ce docker-ce-cli containerd.io
 which docker
 if [[ $? -eq 0 ]]; then
   echo "Docker installation succeeded"
@@ -19,26 +17,22 @@ else
   echo "Docker installation failed"
 fi
 
-#For Jenkins Installation:
-#Install Java:
 echo "Installing java..."
-sudo yum -y install java-1.8.0-openjdk.x86_64
-#Set environment variables:
+yum -y install java-1.8.0-openjdk.x86_64
 echo "Adding environment variables"
-sudo cp /etc/profile /etc/profile_backup #Backup /etc/profile
+cp /etc/profile /etc/profile_backup 
 echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk' | sudo tee -a /etc/profile
 echo 'export JRE_HOME=/usr/lib/jvm/jre' | sudo tee -a /etc/profile
 source /etc/profile
-#Install Jenkins
 echo "Installing jenkins"
 cd ~
 which wget
 if [[ $? -eq 1 ]]; then
   echo "Installing wget..."
-  sudo yum -y install wget
+  yum -y install wget
 fi
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 yum -y install jenkins && echo "Jenkins Installation succeeded"
 
 echo "Goodbye"
