@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-sudo -u vagrant
 echo "Updating system"
 yum -y update
 yum -y install epel-release yum-utils
