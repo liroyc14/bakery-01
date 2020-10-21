@@ -30,12 +30,3 @@ else
         echo "User chose invalid character..."
     fi
 fi
-
-
-
-
-
-
-
-
-
