@@ -16,9 +16,6 @@ sudo systemctl is-active --quiet docker && echo Docker is running
 
 echo "Installing java"
 sudo yum install -y java-1.8.0-openjdk
-#cp /home/shai/.bash_profile /home/shai/.bash_profile_bku
-#export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre/bin/java |sudo tee /home/shai/.bash_profile
-#source /home/shai/.bash_profile
 
 export JAVA_HOME=/usr/bin/java
 sudo cp /etc/environment /etc/environment-bku
