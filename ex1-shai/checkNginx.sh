@@ -18,7 +18,6 @@ else
         sudo systemctl disable nginx
         sudo userdel -r nginx
         
-#The activities here will delete all Nginx files included engine (binary files), configuration files and also jpg files.
         sudo rm -rf /etc/nginx
         sudo rm -rf /var/log/nginx
         sudo rm -rf /var/cache/nginx/
