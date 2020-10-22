@@ -24,7 +24,7 @@ echo "export JAVA_HOME=/usr/bin/java" >> /etc/environment
 source /etc/environment
 sudo chmod 755 /etc/environment
 
-#Install wget
+##Install wget
 which wget > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then
         sudo yum install -y wget
