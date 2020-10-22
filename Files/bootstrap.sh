@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo yum update -y
 #Install Docker
 which docker
@@ -19,7 +20,6 @@ else
         echo "wget installed"
 fi
 #install Jenkins
-systemctl is-active --quiet jenkins
 if  service --status-all | grep -Fq 'jenkins' ; then
         echo "Jenkins installed"
 else
@@ -31,6 +31,5 @@ else
         sudo systemctl daemon-reload
 #start Jenkins
         sudo systemctl start jenkins
-        echo $(cat /var/lib/jenkins/secrets/initialAdminPassword) >> ~/adminpass.txt
 fi
 echo "Done!"
