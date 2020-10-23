@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  options { timestamp () }
+  stages {
+    stage('Stage 1') {
+      steps {
+        echo $JOB_NAME  
+        echo "${currentBuild.number}"
+      }
+    post {
+      success {
+        echo "Pipeline successful"
+      }
+      failure {
+        echo "The pipeline failed :("
+      }
+    }
+    }
+  }
+}
