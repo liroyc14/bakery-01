@@ -1,6 +1,5 @@
 pipeline {
   agent any
-  options { timestamp () }
   stages {
     stage('Stage 1') {
       steps {
