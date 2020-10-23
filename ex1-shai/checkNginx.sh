@@ -25,8 +25,8 @@ else
 
         sudo yum remove -y nginx
     elif [[ $answer = "N" ]]; then
-        echo "nginx has not been deleted."
+        echo "nginx has not been deleted"
     else
-        echo "User chose invalid character..."
+        echo "User chose invalid character...."
     fi
 fi
