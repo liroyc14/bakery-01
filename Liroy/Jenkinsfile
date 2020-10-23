@@ -7,13 +7,13 @@ pipeline {
         echo "${currentBuild.number}"
       }
     }
-    post {
-      success {
-        echo "Pipeline successful"
-      }
-      failure {
-        echo "The pipeline failed :("
-      }
+  }
+  post {
+    success {
+      echo "Pipeline successful"
+   }
+    failure {
+      echo "The pipeline failed :("
     }
   }
 }
