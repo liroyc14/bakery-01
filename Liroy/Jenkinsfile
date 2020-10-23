@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Stage 1') {
       steps {
-        echo $JOB_NAME  
-        echo "${currentBuild.number}"
+        sh 'echo $JOB_NAME'  
+        sh 'echo "${currentBuild.number}"'
       }
     }
   }
