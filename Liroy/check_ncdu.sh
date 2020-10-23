@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-which ncdu &> /dev/null
+if [ "$(id -un)" != "root" ]; then
+  echo "sudoing.."
+  exec sudo "$0" "$@" || echo "You do not have root permission!" && exit 1
+fi
+
+yum list installed | grep ncdu
 if [[ $? -eq 0 ]]; then
   echo "ncdu is installed. Goodbye"
   exit 0
