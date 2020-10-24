@@ -7,7 +7,9 @@ then
     echo "Would you like nginx to be removed from this system? (yes/no)"
     read $choice
     if "$choice" = "yes"; then sudo systemctl stop nginx.service && sudo systemctl disable nginx.service && sudo userdel -r nginx && sudo rm -rf /etc/nginx && sudo rm -rf /var/log/nginx && sudo rm -rf /var/cache/nginx/ && sudo rm -rf /usr/lib/systemd/system/nginx.service && sudo yum remove -y nginx
+	fi
     if "$choice" = "no"; then echo "OK. nginx will remain intact".
+	fi
 
 else
     echo "nginx does not exist on this machine"
