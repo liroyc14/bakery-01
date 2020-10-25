@@ -10,7 +10,6 @@ yum install jenkins
 sudo systemctl start jenkins.service
 sudo systemctl enable jenkins.service
 
-wget https://github.com/git/git/archive/v2.29.1.tar.gz -O git.tar.gz
 tar -zxf git.tar.gz
 cd git-*
 make configure
