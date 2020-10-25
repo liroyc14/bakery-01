@@ -1,4 +1,5 @@
 #!/bin/bash
+#This script checks wether nginx is installed, if not prompts to install. 
 
 if which nginx > /dev/null 2>&1
 
@@ -15,7 +16,7 @@ else
     echo "nginx does not exist on this machine"
     echo "Installing nginx now..."
     sudo yum install -y nginx
-    sudo systemctl start nginx
     sudo systemctl enable nginx
+    sudo systemctl start nginx
 fi
-#test
+
