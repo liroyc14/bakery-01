@@ -16,6 +16,6 @@ else
     echo "Installing nginx now..."
     sudo yum install -y nginx
     sudo systemctl start nginx
-    sudo systemctl enable nginx
+    sudo systemctl start nginx
 fi
 #test
