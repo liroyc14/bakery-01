@@ -3,7 +3,7 @@
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 
-cd ~
+cd $HOME
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 yum install jenkins
