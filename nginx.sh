@@ -18,4 +18,3 @@ else
     sudo systemctl start nginx
     sudo systemctl start nginx
 fi
-#test
