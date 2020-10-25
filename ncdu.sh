@@ -1,4 +1,5 @@
 #!/bin/bash
+#This script installs ncdu if not installed, after verifying with the user.
 
 if which ncdu > /dev/null 2>&1
 then
