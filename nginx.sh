@@ -1,4 +1,5 @@
 #!/bin/bash
+#This script checks wether nginx is installed, if not prompts to install.
 
 if which nginx > /dev/null 2>&1
 
