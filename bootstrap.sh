@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # The docker part could also be accomplished using: sudo apt install docker && sudo systemctl start docker && sudo systemctl enable docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
