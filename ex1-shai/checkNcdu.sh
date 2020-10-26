@@ -7,8 +7,8 @@ if [[ $? -eq 1 ]]; then
     if [[ $answer = "Y" ]]; then
         echo "Installing ncdu"
         yum install -y epel-release
-        sudo yum provides ncdu 
-        sudo yum install -y ncdu
+       # yum provides ncdu 
+        yum install -y ncdu
     elif [[ $answer = "N" ]]; then
         echo "Ncdu not installed."
     else 

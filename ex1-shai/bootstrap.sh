@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
 #Install docker
-sudo yum update -y 
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum update -y 
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 echo "Installing docker"
-sudo yum install -y docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
-sudo systemctl start docker
+yum install -y docker-ce docker-ce-cli containerd.io
+systemctl enable docker
+systemctl start docker
 
-sudo systemctl is-active --quiet docker && echo Docker is running
+systemctl is-active --quiet docker && echo Docker is running
 
 echo "Installing java"
-sudo yum install -y java-1.8.0-openjdk
+yum install -y java-1.8.0-openjdk
 
 export JAVA_HOME=/usr/bin/java
 
@@ -23,12 +23,12 @@ else
         echo "wget installed"
 fi
 
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
 echo "Installing jenkins"
-sudo yum install -y jenkins
-sudo systemctl enable jenkins
-sudo systemctl start jenkins
+yum install -y jenkins
+systemctl enable jenkins
+systemctl start jenkins
 
-sudo systemctl is-active --quiet jenkins && echo Jenkins is running
+systemctl is-active --quiet jenkins && echo Jenkins is running
