@@ -6,6 +6,7 @@ if [[ $? -eq 1 ]]; then
         yum install git
         git config --global user.name Shai Kamenker
         git config --global user.email kamenker92@gmail.com
+	echo -e "\n"|ssh-keygen -t rsa -b 4096 -C "kamenker92@gmail.com" -N ""
 else
         echo "git installed"
 fi
