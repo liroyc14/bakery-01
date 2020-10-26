@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 which nginx > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then	

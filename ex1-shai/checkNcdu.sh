@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#Install ncdu
 which ncdu > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then	
     echo "Ncdu is not currently installed on Linux, are you interested in installing it? select the option that you prefer[Y/N]"
