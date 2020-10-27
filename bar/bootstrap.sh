@@ -14,6 +14,6 @@ sudo yum -y install lsof
 sudo sed -i "266i jenkins-port    8080/tcp                        #Application_Jenkins" /etc/services
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo firewall-cmd --reload
-sudo docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:5000$
+sudo docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
 sudo docker exec -u root -it laughing_engelbart /bin/bash
 cat /var/jenkins_home/secrets/initialAdminPassword
