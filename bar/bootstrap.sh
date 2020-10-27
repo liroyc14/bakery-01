@@ -9,7 +9,7 @@ sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 yum -y install docker docker-ce docker-ce-cli containerd.io
-sudo service docker start
+sudo systemctl enable docker
 sudo yum -y install lsof
 sudo sed -i "266i jenkins-port    8080/tcp                        #Application_Jenkins" /etc/services
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
