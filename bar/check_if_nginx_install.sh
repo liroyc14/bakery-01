@@ -15,7 +15,11 @@ if [[ $? -eq 0 ]]; then
     echo "Goodbye"
   else
     echo "Invalid answer"
+<<<<<<< HEAD
   fi    
+=======
+  fi
+>>>>>>> 067ab65777a484a616dee5fb96f9b9c096e4122c
 else
   read -p "nginx is not installed.install it? [y/n]" user_ans
   if [[ $user_answer == "y" ]]; then
