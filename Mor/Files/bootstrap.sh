@@ -27,4 +27,10 @@ else
         sudo systemctl start jenkins
 	sudo systemctl enable jenkins
 fi
+yum install git -y
+ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa -q -N "" -C "Create by bootstrap.sh"
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
+read -p "Copy your public key and add it to your account"
+ssh -T git@github.com
 echo "Done!"
