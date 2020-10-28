@@ -13,7 +13,7 @@ sudo systemctl start jenkins.service
 sudo systemctl enable jenkins.service
 
 tar -zxf git.tar.gz
-cd git-*
+cd  "$(\ls -1dt ./*/ | head -n 1)"
 make configure
 ./configure --prefix=/usr/local
 sudo make install
