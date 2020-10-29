@@ -10,8 +10,16 @@ cd  "$(\ls -1dt ./*/ | head -n 1)"
 make install
 
 #Git initial setup:
-git config --global user.name "Marom Goldshmidt"
-git config --global user.email "maromg@gmail.com"
+# The argument $1 will be the username and the second argument will be the email address...
+git config --global user.name $1
+git config --global user.email $2
+
+if [ -z "$1" ]
+then echo "\$1 is empty. Please rerun this script with proper parameter input."
+else
+if [ -z "$2" ]
+then echo "\$2 is empty. Please rerun this script with proper parameter input."
+else
 echo "This is your Git user name:"
 git config user.name
 echo "This is your Git user email:"
