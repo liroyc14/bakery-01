@@ -1,19 +1,19 @@
 #!/usr/bin/bash
-sudo yum -y install git
+yum -y install git
 ssh-keygen -t rsa -b 4096
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ssh -T git@github.com
-sudo yum install -q -y yum-utils
-sudo yum-config-manager \
+yum install -q -y yum-utils
+yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum -y install docker docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
-sudo yum -y install lsof
-sudo sed -i "266i jenkins-port    8080/tcp                        #Application_Jenkins" /etc/services
-sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
-sudo firewall-cmd --reload
-sudo docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
-sudo docker exec -u root -it laughing_engelbart /bin/bash
+yum -y install docker docker-ce docker-ce-cli containerd.io
+systemctl enable docker
+yum -y install lsof
+sed -i "266i jenkins-port    8080/tcp                        #Application_Jenkins" /etc/services
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --reload
+docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+docker exec -u root -it laughing_engelbart /bin/bash
 cat /var/jenkins_home/secrets/initialAdminPassword
