@@ -6,10 +6,7 @@ if [[ $? -eq 0 ]]; then
     systemctl stop nginx.service
     systemctl disable nginx.service
     userdel -r nginx
-    rm -rf /etc/nginx
-    rm -rf /var/log/nginx
-    rm -rf /var/cache/nginx/
-    rm -rf /usr/lib/systemd/system/nginx.service
+    rm -rf /etc/nginx /var/log/nginx /var/cache/nginx/ /usr/lib/systemd/system/nginx.service
     yum erase -y nginx
   elif [[ $user_answer == "n" ]]; then
     echo "Goodbye"
