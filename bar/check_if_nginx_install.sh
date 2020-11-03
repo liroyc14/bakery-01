@@ -6,20 +6,14 @@ if [[ $? -eq 0 ]]; then
     systemctl stop nginx.service
     systemctl disable nginx.service
     userdel -r nginx
-    rm -rf /etc/nginx
-    rm -rf /var/log/nginx
-    rm -rf /var/cache/nginx/
-    rm -rf /usr/lib/systemd/system/nginx.service
+    rm -rf /etc/nginx /var/log/nginx /var/cache/nginx/ /usr/lib/systemd/system/nginx.service
     yum erase -y nginx
   elif [[ $user_answer == "n" ]]; then
     echo "Goodbye"
   else
     echo "Invalid answer"
-<<<<<<< HEAD
   fi    
-=======
   fi
->>>>>>> 067ab65777a484a616dee5fb96f9b9c096e4122c
 else
   read -p "nginx is not installed.install it? [y/n]" user_ans
   if [[ $user_answer == "y" ]]; then
