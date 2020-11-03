@@ -1,3 +1,4 @@
+#this scripts need's to run as root
 #!/usr/bin/bash
 yum -y install git
 ssh-keygen -t rsa -b 4096
