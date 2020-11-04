@@ -3,7 +3,7 @@
 which git > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then        
         yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
-        yum install git
+        yum install -y git
         git config --global user.name Shai Kamenker
         git config --global user.email kamenker92@gmail.com
 	echo -e "\n"|ssh-keygen -t rsa -b 4096 -C "kamenker92@gmail.com" -N ""
