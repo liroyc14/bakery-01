@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-which nginx &> /dev/null
+if [ "$(id -un)" != "root" ]; then
+  echo "sudoing.."
+  exec sudo "$0" "$@" || echo "You do not have root permission!" && exit 1
+fi
+
+yum list installed | grep nginx
 if [[ $? -eq 0 ]]; then
   read -p "nginx is already installed. Would you like to uninstall it? [y/n]" user_answer
   if [[ $user_answer == "y" ]]; then
@@ -12,7 +17,7 @@ if [[ $? -eq 0 ]]; then
     rm -rf /var/log/nginx
     rm -rf /var/cache/nginx/
     rm -rf /usr/lib/systemd/system/nginx.service
-    yum erase -y nginx
+    yum erase -y nginx nginx-filesystem
   elif [[ $user_answer == "n" ]]; then
     echo "Goodbye"
   else
