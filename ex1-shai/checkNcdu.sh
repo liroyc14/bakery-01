@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#Install ncdu
 which ncdu > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then	
     echo "Ncdu is not currently installed on Linux, are you interested in installing it? select the option that you prefer[Y/N]"
@@ -8,8 +7,8 @@ if [[ $? -eq 1 ]]; then
     if [[ $answer = "Y" ]]; then
         echo "Installing ncdu"
         yum install -y epel-release
-        sudo yum provides ncdu 
-        sudo yum install -y ncdu
+       # yum provides ncdu 
+        yum install -y ncdu
     elif [[ $answer = "N" ]]; then
         echo "Ncdu not installed."
     else 
